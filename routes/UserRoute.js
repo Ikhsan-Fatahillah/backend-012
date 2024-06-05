@@ -4,13 +4,16 @@ import {
     getUserById,
     createUser,
     updateUser,
-    deleteUser
+    deleteUser,
+    initialEnpoint
 } from "../controller/UserController.js";
 import { getAkun, Register, Login, Logout } from "../controller/UserController.js";
 import { verifyToken } from "../middleware/VerifyToken.js";
 import { refreshToken } from "../controller/RefreshToken.js";
 
 const router = express.Router();
+
+router.get('/', initialEnpoint);
 
 router.get('/users', getUsers);
 router.get('/users/:id', getUserById);

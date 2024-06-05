@@ -14,6 +14,14 @@ export const getAkun = async(req, res) => {
     }
 }
 
+//Initial endpoint
+export const initialEnpoint = async (req, res) => {
+    res.status(200).json({
+        status: "success",
+        message: "Connected to Ticket-StandUp Backend!!",
+    })
+}
+
 export const Register = async(req, res) => {
     const {username, password, confPassword} = req.body;
     if(password !== confPassword) return res.status(400).json({msg: "Password & Confirm Eror"});
