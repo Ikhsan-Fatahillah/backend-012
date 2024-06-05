@@ -13,8 +13,8 @@ RUN npm install
 # Copy the rest of the application
 COPY . .
 
-# Expose port 3000
-EXPOSE 3000
+# Expose port 8080
+EXPOSE 8080
 
-# Command to run the application
-CMD ["node", "index.js"]
+# Command to run the application using serve
+CMD ["npx", "serve", "-s", ".", "-l", "8080"]
