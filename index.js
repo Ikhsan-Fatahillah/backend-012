@@ -12,8 +12,7 @@ app.use(cors(
     {
         credentials: true,
         origin: [
-            "*",
-            'http://localhost:3000',
+            "http://localhost:3000",
             "https://manajemen-frontend-cvbl6cy73a-et.a.run.app",
 
         ]
