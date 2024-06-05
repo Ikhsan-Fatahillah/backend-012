@@ -7,16 +7,27 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/$PROJECT_ID/backend:$COMMIT_SHA']
 
+# Debugging Step: Print environment variables
+- name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: 'bash'
+  args:
+    - '-c'
+    - |
+      echo "PROJECT_ID: $PROJECT_ID"
+      echo "COMMIT_SHA: $COMMIT_SHA"
+
 # Step 3: Deploy to Cloud Run
 - name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: 'bash'
   args:
-    - 'run'
-    - 'deploy'
-    - 'backend'
-    - '--image=gcr.io/$PROJECT_ID/backend:$COMMIT_SHA'
-    - '--platform=managed'
-    - '--region=us-central1'
-    - '--allow-unauthenticated'
+    - '-c'
+    - |
+      gcloud run deploy backend \
+        --image=gcr.io/$PROJECT_ID/backend:$COMMIT_SHA \
+        --platform=managed \
+        --region=us-central1 \
+        --allow-unauthenticated \
+        --quiet
 
 images:
 - 'gcr.io/$PROJECT_ID/backend:$COMMIT_SHA'
