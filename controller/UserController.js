@@ -18,7 +18,7 @@ export const getAkun = async(req, res) => {
 export const initialEnpoint = async (req, res) => {
     res.status(200).json({
         status: "success",
-        message: "Connected to Ticket-StandUp Backend!!",
+        message: "Connected to Manajemen app Backend!!",
     })
 }
 
