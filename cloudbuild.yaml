@@ -14,11 +14,10 @@ steps:
         '--timeout',
         '1000s',
         '--port',
-        '5000',
+        '8080',  # Ubah port menjadi 8080
         '--region',
         'asia-southeast2',
         '--platform',
         'managed',
         '--allow-unauthenticated',
       ]
- 
