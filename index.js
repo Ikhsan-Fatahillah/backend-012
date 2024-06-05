@@ -9,16 +9,32 @@ dotenv.config();
 const app = express();
 
 app.use(cors(
-    {   credentials: true,
+    {
+        credentials: true,
         origin: [
-        "*",
-        'http://localhost:3000', 
-        "https://manajemen-frontend-cvbl6cy73a-et.a.run.app",
-        
-    ] 
-}));
+            "*",
+            'http://localhost:3000',
+            "https://manajemen-frontend-cvbl6cy73a-et.a.run.app",
+
+        ]
+    }));
+
+
+
 app.use(cookieParser());
 app.use(express.json());
+
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    next();
+})
+
+
+
 app.use(UserRoute);
 
 try {
