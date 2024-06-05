@@ -1,0 +1,56 @@
+GET http://localhost:5000/users
+
+###
+GET http://localhost:5000/akun
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJha3VuSWQiOjYsInVzZXJuYW1lIjoiaWtoc2FuIiwiaWF0IjoxNzE3NTk1NTk3LCJleHAiOjE3MTc1OTU2MTd9.7-dX2-9Srr36kgA3Yh832vGgcEihCoDC_Rsgg6DBBCE
+
+###
+POST http://localhost:5000/akun
+Content-Type: application/json
+
+{
+    "username": "ikhsan2",
+    "password": "ikhsan2",
+    "confPassword": "ikhsan2"
+}
+
+###
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "username": "ikhsan",
+    "password": "ikhsan"
+}
+
+###
+GET http://localhost:5000/token
+
+###
+DELETE http://localhost:5000/logout
+
+###
+GET http://localhost:5000/users/1
+
+###
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name": "Joh Dang",
+    "email": "johdoe@gmail.com",
+    "gender": "Male"
+}
+
+###
+PATCH  http://localhost:5000/users/1
+Content-Type: application/json
+
+{
+    "name": "M Fikri",
+    "email": "mfikri@gmail.com",
+    "gender": "Male"
+}
+
+###
+DELETE   http://localhost:5000/users/10
