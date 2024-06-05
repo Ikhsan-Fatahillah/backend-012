@@ -16,5 +16,5 @@ COPY . .
 # Expose port 8080
 EXPOSE 8080
 
-# Command to run the application using serve
-CMD ["npx", "serve", "-s", ".", "-l", "8080"]
+# Command to run the React application
+CMD ["serve", "-s", "build", "-l", "8080"]
