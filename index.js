@@ -8,7 +8,7 @@ import Akun from "./models/UserModel2.js";
 dotenv.config();
 const app = express();
 
-app.use(cors({ credentials: true, origin: ['http://localhost:3000', "https://manajemen-frontend-cvbl6cy73a-et.a.run.app"] }));
+app.use(cors({ origin: ["*",'http://localhost:3000', "https://manajemen-frontend-cvbl6cy73a-et.a.run.app"] }));
 app.use(cookieParser());
 app.use(express.json());
 app.use(UserRoute);
